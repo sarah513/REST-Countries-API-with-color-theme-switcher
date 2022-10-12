@@ -1,0 +1,79 @@
+<html>
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/all.min.css">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" />
+</head>
+
+<body>
+    <section class="dark-mode">
+        <nav class="col-12 shadow-sm">
+            <div class="d-flex justify-content-between container py-3">
+                <h1 class="fs-5 fw-bold">Where in the world ?</h1>
+                <div class="d-flex align-items-center " id="mode">
+                    <i class="fa-solid fa-moon pe-1"></i>
+                    <p class="m-0">Dark mode</p>
+                </div>
+            </div>
+        </nav>
+        <div class="container d-flex justify-content-start mt-5">
+            <button class="back shadow-sm d-flex align-items-center px-3 py-1 rounded-1 ">
+                <i class="fa-solid fa-arrow-left pe-1"></i>
+                Back
+            </button>
+        </div>
+        <div class=" container d-flex flex-wrap main ">
+            <!-- image div  -->
+            <div class=" col-lg-4 col-md-6 col-sm-12 col-xs-12 p-5">
+                <div class="content-img  col-12">
+                    <img src="" class="w-100" alt="">
+                </div>
+            </div>
+            <div class="col-md-6 col-sm-12 col-xs-12 p-5 info">
+                <div class="col-12">
+                    <p class="fs-3 fw-bold">name</p>
+                    <div class="d-flex flex-wrap">
+                        <div class="col-md-6 col-sm-12 col-xs-12 p-2">
+                            <p class="fw-bold">Native name : <span class="fw-normal nativeName"></span></p>
+                            <p class="fw-bold">Population : <span class="fw-normal content-pop"></span></p>
+                            <p class="fw-bold">Region : <span class="fw-normal content-region"></span></p>
+                            <p class="fw-bold">Sub region : <span class="fw-normal sub-region"></span></p>
+                            <p class="fw-bold">Capital : <span class="fw-normal content-cap"></span></p>
+
+                        </div>
+                        <div class="col-md-6 col-sm-12 col-xs-12 p-2">
+                            <p class="fw-bold">Top level domain : <span class="fw-normal top"></span></p>
+                            <p class="fw-bold">Currencies : <span class="fw-normal content-cur"></span></p>
+                            <p class="fw-bold">Languages : <span class="fw-normal langs"></span></p>
+                        </div>
+
+                    </div>
+
+                    <div class="d-flex align-items-center borderC">
+                        <span class="fw-bold">Border Countries : </span>
+                        <div class="d-flex flex-wrap border-countries">
+                            <!-- <div class="mx-2 p-1">
+                                france
+                            </div>
+                            <div class="mx-2 p-1">
+                                england
+                            </div>
+                            <div class="mx-2 p-1"> ay bta3</div> -->
+                        </div>
+
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <script src="js/script.js"></script>
+</body>
+
+</html>
