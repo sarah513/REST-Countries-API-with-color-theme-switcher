@@ -18,9 +18,11 @@ var top = document.querySelector('.top');
 var content_cur = document.querySelector('.content-cur');
 var langs = document.querySelector('.langs');
 var border_countries = document.querySelector('.border-countries');
+var country_name=document.querySelector(".country-name");
 
 
 
+// function of theme 
 mode.addEventListener('click', function () {
     var value = modeVal.innerHTML;
 
@@ -43,6 +45,7 @@ mode.addEventListener('click', function () {
 
 })
 
+//  function of display needed data
 async function display(url) {
     var divs = ``;
     var data = await fetch(url);
@@ -68,6 +71,9 @@ async function display(url) {
         innerbody.innerHTML = divs;
     }
 }
+
+
+//  function to display all available data in json file
 async function displayAll() {
     display('https://restcountries.com/v3.1/all');
 }
@@ -77,14 +83,24 @@ if (select != null) {
         display(`https://restcountries.com/v3.1/region/${selection}`);
     })
 }
+
+// function of search on a country
 if (search_bar != null) {
     search_bar.addEventListener('keyup', function () {
         var searchWord = search_bar.value;
-        display(`https://restcountries.com/v3.1/name/${searchWord}`);
+        if (searchWord != '') {
+            display(`https://restcountries.com/v3.1/name/${searchWord}`);
+        } else {
+            displayAll();
+        }
+
+
     })
 }
 
 displayAll();
+
+//  function to return to main page
 if (back != null) {
     back.addEventListener('click', function () {
         window.open('index.html', '_self');
@@ -92,10 +108,13 @@ if (back != null) {
 }
 
 
+// function to fill data in content page
 async function completeData(capitalname) {
     var data = await fetch(`https://restcountries.com/v3.1/capital/${capitalname}`);
     var databody = await data.json();
     content_img.setAttribute('src', `${databody[0].flags.svg}`);
+
+    country_name.innerHTML=databody[0].name.official;
     native = databody[0].name.nativeName;
 
     const val = native[Object.keys(native)[0]];
@@ -119,10 +138,10 @@ async function completeData(capitalname) {
     }
     langs.innerHTML = val3
 
-    border_countries.innerHTML= '';
+    border_countries.innerHTML = '';
     borders = databody[0].borders;
     for (const key of Object.keys(borders)) {
-    
+
         border_countries.innerHTML += `
         <div class="mx-2 p-1">
                                 ${borders[key]}
